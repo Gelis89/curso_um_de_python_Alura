@@ -1,6 +1,8 @@
 #importando biblioteca
 import os
 
+restaurantes = ['Pizza', 'Sushi']
+
 def exibir_nome_do_programa():
     print("""
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
@@ -27,6 +29,19 @@ def opcao_invalida():
     input('digite um numero para opção principal: ')
     main()
 
+def cadastrar_restaurante():
+    os.system('cls')
+    print('cadastro de novos restaurante\n')
+    nome_do_restaurante = input('digite o nome do restaurante que deseja cadastrar: ')
+    #adicionar a lista
+    restaurantes.append(nome_do_restaurante)
+    print(f'o restaurante{nome_do_restaurante} foi cadastrado com sucesso\n')
+    input('digite uma tecla para para voltar ao menu principal')
+    main()
+
+def listar_restaurantes():
+    print('listando restaurantes ')
+
 def escolher_opcao():
     #tentar executar, caso não funcione ele exibe o except
     try:
@@ -34,7 +49,7 @@ def escolher_opcao():
         print(f'Você escolheu a opção {opcao_escolhida}')
 
         if opcao_escolhida == 1:
-            print('Cadastrar restaurante')
+            cadastrar_restaurante()
         elif opcao_escolhida == 2:
             print('2. Listar restaurante')
         elif opcao_escolhida == 3:
