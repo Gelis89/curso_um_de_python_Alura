@@ -36,11 +36,18 @@ def cadastrar_restaurante():
     #adicionar a lista
     restaurantes.append(nome_do_restaurante)
     print(f'o restaurante{nome_do_restaurante} foi cadastrado com sucesso\n')
-    input('digite uma tecla para para voltar ao menu principal')
+    input('\ndigite uma tecla para para voltar ao menu principal')
     main()
 
 def listar_restaurantes():
-    print('listando restaurantes ')
+    os.system('cls')
+    print('listando os restaurantes\n')
+    #usando for in - para cada restaurante na lista restaurante 
+    for restaurante in restaurantes:
+        print(f'.{restaurante}')
+        
+    input('\ndigite uma tecla para para voltar ao menu principal')
+    main()
 
 def escolher_opcao():
     #tentar executar, caso não funcione ele exibe o except
@@ -51,7 +58,7 @@ def escolher_opcao():
         if opcao_escolhida == 1:
             cadastrar_restaurante()
         elif opcao_escolhida == 2:
-            print('2. Listar restaurante')
+            listar_restaurantes()    
         elif opcao_escolhida == 3:
             print('3. Ativar restaurante')
         elif opcao_escolhida == 4:
